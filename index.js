@@ -35,6 +35,16 @@ app.get('/api/persons', (req, res) => {
   res.json(persons)
 })
 
+// Route /info hakemistoon
+app.get('/info', (req, res) => {
+    let reqTime = new Date(Date.now())
+    res.send(
+        `phonebook has info for ${persons.length} people <br>
+        ${reqTime.toString()}`
+    )
+    console.log("res.Headers: ", res.dat)
+  })
+
 const PORT = 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
