@@ -36,10 +36,10 @@ app.get('/api/persons', (req, res) => {
 })
 
 // Route /api/persons/id hakemistoon
-app.get('/api/persons:id', (req, res) => {
+app.get('/api/persons/:id', (req, res) => {
   const id = Number(req.params.id)
   const person = persons.find(person => person.id === id)
-  console.log("Testi")
+  console.log(`Person id: ${id}`)
 
   if (person) {    
     res.json(person)  
